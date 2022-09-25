@@ -1,0 +1,47 @@
+.block {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 0;
+    background: #000;
+    max-width: 180px;
+    color: #fff;
+    padding: 20px;
+    font-size: 40px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    margin: 0;
+}
+
+.button {
+    background: transparent;
+    border: 0;
+    font-size: 32px;
+    line-height: 36px;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+    color: #000;
+    margin: 0 5px;
+}
+
+.button:hover {
+    color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #000;
+}
+
+
+.activeButton {
+    color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #000;
+}
