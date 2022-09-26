@@ -1,7 +1,8 @@
-export const MainPage = () => {
+import { FC } from "react"
+import { Container } from "../../components/Container/Container";
+
+export const MainPage: FC<{}> = () => {
     return (
-        <div>
-            <h1>MainPage</h1>
-        </div>
+        <Container title="Мир"/>
     )
 }
