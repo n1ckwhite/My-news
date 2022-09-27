@@ -3,17 +3,20 @@ import { Cards } from "../../components/Cards/Cards";
 import { Container } from "../../components/Container/Container";
 import { getNews } from "../../service/action/news";
 import { useAppDispatch, useAppSelector } from "../../service/types";
-import stylesHealth from "./HealthPage.module.css";
 export const HealthPage: FC<{}> = () => {
+  const language = useAppSelector((state) => state.language.language);
   const state = useAppSelector((state) => state.news.news);
   const dispatch = useAppDispatch();
-  const ru = "ru";
   useEffect(() => {
-    dispatch(getNews(ru, "health"));
+    dispatch(getNews("ru", "health"));
   }, [dispatch]);
   return (
-    <Container title="Здоровье">
+    <Container title={language === "ru" ? "Здоровье" : "Health"}>
+      {state[0].articles.length !== 0 ? (
         <Cards list={state[0]} />
+      ) : (
+        <h2 style={{ textAlign: "center", marginTop: 40 }}>Loading...</h2>
+      )}
     </Container>
   );
 };
