@@ -12,7 +12,7 @@ export const TechnologePage: FC<{}> = () => {
   }, [dispatch]);
   return (
     <Container title={language === "ru" ? "Технологии" : "Technology"}>
-      {state[0].articles.length !== 0 ? (
+      {state[0] && state[0].articles.length !== 0 ? (
         <Cards list={state[0]} />
       ) : (
         <h2 style={{ textAlign: "center", marginTop: 40 }}>Loading...</h2>

@@ -1,7 +1,7 @@
 import { SET_LANGUAGE_EN, SET_LANGUAGE_RU } from "../action";
 
 
-const initialState = {
+export const initialState = {
     language: 'ru'
 }
 

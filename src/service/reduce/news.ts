@@ -1,6 +1,6 @@
 import { GET_NEWS_ERROR, GET_NEWS_REQUEST, GET_NEWS_SUCCESS } from "../action";
 
-const initialState = {
+export const initialState = {
   news: [],
   error: "",
   pending: false,
