@@ -1,8 +1,19 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { Cards } from "../../components/Cards/Cards";
 import { Container } from "../../components/Container/Container";
-import stylesHealth from './HealthPage.module.css';
+import { getNews } from "../../service/action/news";
+import { useAppDispatch, useAppSelector } from "../../service/types";
+import stylesHealth from "./HealthPage.module.css";
 export const HealthPage: FC<{}> = () => {
-    return (
-        <Container title="Здоровье"/>
-    )
-}
+  const state = useAppSelector((state) => state.news.news);
+  const dispatch = useAppDispatch();
+  const ru = "ru";
+  useEffect(() => {
+    dispatch(getNews(ru, "health"));
+  }, [dispatch]);
+  return (
+    <Container title="Здоровье">
+        <Cards list={state[0]} />
+    </Container>
+  );
+};

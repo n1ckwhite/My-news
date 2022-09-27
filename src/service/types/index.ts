@@ -9,6 +9,20 @@ export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
 
+export interface ICard {
+  urlToImage: string | null
+  url: string,
+  title: string,
+  description: string,
+  publishedAt: string
+}
+
+export interface IList {
+  list: {
+    articles: [ICard]
+  }
+}
+
 export type AppThunk<R, S, E, A extends Action> = (
     dispatch: ThunkDispatch<S, E, A>,
     getState: () => S,

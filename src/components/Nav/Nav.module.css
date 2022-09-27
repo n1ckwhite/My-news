@@ -1,0 +1,21 @@
+.nav {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.link {
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    padding: 20px;
+    transition: .2s;
+}
+
+.link:hover {
+    opacity: .6;
+}

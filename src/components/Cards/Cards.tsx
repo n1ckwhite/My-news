@@ -1,30 +1,14 @@
 import { FC } from "react";
-
-export const Cards: FC<any> = ({ list }) => {
+import { IList } from "../../service/types";
+import { Card } from "../Card/Card";
+import stylesCards from './Cards.module.css';
+export const Cards: FC<IList> = ({ list }) => {
   return (
-    <ul>
-      <ul>
+      <ul className={stylesCards.list}>
         {list &&
-          list.articles.map((i: any) => {
-            return (
-              <li key={i.publishedAt}>
-                <a href={i.url} target="_blank" rel="noreferrer">
-                  <img
-                    src={
-                      i.urlToImage === null
-                        ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcX6h8SqNy2UK1wV1oW_GKd2UK3Kv1Ye6krvZCwB3AGnA4KA9MwemXfGHjY33xhuMPtU&usqp=CAU"
-                        : i.urlToImage
-                    }
-                    alt={i.title}
-                  />
-                  <h3>{i.title}</h3>
-                  <p>{i.description}</p>
-                  <p>{i.publishedAt}</p>
-                </a>
-              </li>
-            );
+          list.articles.map((i) => {
+            return <Card key={i.publishedAt} card={i} />;
           })}
       </ul>
-    </ul>
   );
 };
